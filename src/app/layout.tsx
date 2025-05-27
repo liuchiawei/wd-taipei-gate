@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Roboto, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/common/themeProvider";
+import AppSidebar from "@/components/common/appSidebar";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -38,7 +40,12 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
-          {children}
+          <SidebarProvider>
+            <AppSidebar />
+            <main>
+              {children}
+            </main>
+          </SidebarProvider>
         </ThemeProvider>
         <Analytics />
       </body>

@@ -1,0 +1,35 @@
+{
+  "title": "AppSidebar",
+  "gates": [
+    {
+      "name": "北門",
+      "formalName": "承恩門",
+      "history": "1800",
+      "description": "北門は、京都府京都市中京区にある城門である。"
+    },
+    {
+      "name": "西門",
+      "formalName": "四条門",
+      "history": "1800",
+      "description": "西門は、京都府京都市中京区にある城門である。"
+    },
+    {
+      "name": "南門",
+      "formalName": "朱雀門",
+      "history": "1800",
+      "description": "南門は、京都府京都市中京区にある城門である。"
+    },
+    {
+      "name": "東門",
+      "formalName": "東門",
+      "history": "1800",
+      "description": "東門は、京都府京都市中京区にある城門である。"
+    },
+    {
+      "name": "小南門",
+      "formalName": "小南門",
+      "history": "1800",
+      "description": "小南門は、京都府京都市中京区にある城門である。"
+    }
+  ]
+}
