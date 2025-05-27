@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "@/components/common/themeProvider";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -30,9 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" >
       <body className={`${roboto.variable} ${notoSansJP.variable} antialiased`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
