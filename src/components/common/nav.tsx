@@ -1,11 +1,12 @@
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink } from '@/components/ui/navigation-menu'
 import { SidebarTrigger } from '@/components/ui/sidebar'
 import ThemeToggle from '@/components/common/themeToggle'
+import { Cog } from 'lucide-react';
 
 export default function Nav() {
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className='p-2'>
         <NavigationMenuItem>
           <SidebarTrigger />
         </NavigationMenuItem>
@@ -14,7 +15,7 @@ export default function Nav() {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            <NavigationMenuLink href="/">Home</NavigationMenuLink>
+            <Cog className='size-4' />
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ThemeToggle />
