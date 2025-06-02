@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" >
-      <body className={`${kiwiMaru.variable} ${delaGothicOne.variable} font-sans antialiased`}>
+      <body className={`${kiwiMaru.variable} ${delaGothicOne.variable} font-sans bg-dot-28-s-2-foreground/30 antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

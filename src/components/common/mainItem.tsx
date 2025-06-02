@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { motion } from 'motion/react'
 import { Gate } from "@/lib/types/type"
-import TypewriterText from "@/components/common/typewriterText"
+import Avatar from "@/components/common/avatar"
 import SplitText from "@/components/common/splitText"
 
 export default function MainItem({ data }: { data: Gate }) {
@@ -19,10 +19,10 @@ export default function MainItem({ data }: { data: Gate }) {
   return (
     <div 
       id={data.id} 
-      className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full px-6 py-8 mx-auto scroll-mt-24"
+      className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 w-full h-full p-8 mx-auto scroll-mt-24"
     >
       {/* 画像 */}
-      <div className="row-span-2 flex flex-col items-center justify-center relative w-full h-full p-12 bg-stone-100 dark:bg-neutral-700 rounded-xl">
+      <div className="row-span-3 flex flex-col items-center justify-center relative w-full h-full p-12 bg-neutral-200 dark:bg-neutral-700 rounded-xl">
         <motion.div
           className="flex flex-col items-center justify-center"
           initial={{ opacity: 0, y: 120, scale: 0.9 }}
@@ -32,7 +32,7 @@ export default function MainItem({ data }: { data: Gate }) {
           <Image src={data.image} alt={data.name} width={300} height={300} />
         </motion.div>
         <motion.div
-          className="border-b border-2 border-stone-700 dark:border-stone-800 z-10 origin-bottom-left"
+          className="border-b border-2 border-stone-700 dark:border-neutral-900 z-10 origin-bottom-left"
           initial={{ width: "0%" }}
           whileInView={{ width: "100%" }}
           transition={{ type: "spring", duration: 0.3 }}
@@ -43,7 +43,7 @@ export default function MainItem({ data }: { data: Gate }) {
           className="text-5xl font-title my-4 tracking-widest"
         />
       </div>
-      {/* テキスト */}
+      {/* タイトル */}
       <div className="hidden md:block md:[writing-mode:vertical-rl] relative h-fit">
         <SplitText
           text={data.formalName}
@@ -59,6 +59,17 @@ export default function MainItem({ data }: { data: Gate }) {
           {data.hiragana}
         </motion.h2>
       </div>
+      {/* 特徴 */}
+      <Avatar text={data.feature} className="justify-start" />
+      {/* <motion.h1
+        className="text-xl md:text-2xl font-[500] tracking-widest"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        {data.feature}
+      </motion.h1> */}
+      {/* 説明 */}
       <div className="flex flex-col gap-4">
         {data.descriptions.map((description, index) => (
           <motion.p
