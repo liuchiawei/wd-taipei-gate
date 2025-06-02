@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Noto_Sans_JP } from "next/font/google";
+import { Roboto, Noto_Sans_JP, Kiwi_Maru, Dela_Gothic_One } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SidebarProvider } from "@/components/ui/sidebar";
@@ -11,9 +11,16 @@ const roboto = Roboto({
   subsets: ["latin"],
 });
 
-const notoSansJP = Noto_Sans_JP({
-  variable: "--font-noto-sans-jp",
+const kiwiMaru = Kiwi_Maru({
+  variable: "--font-kiwi-maru",
   subsets: ["latin"],
+  weight: ["300", "400", "500"],
+});
+
+const delaGothicOne = Dela_Gothic_One({
+  variable: "--font-dela-gothic-one",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" >
-      <body className={`${roboto.variable} ${notoSansJP.variable} antialiased`}>
+      <body className={`${roboto.variable} ${kiwiMaru.variable} ${delaGothicOne.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
