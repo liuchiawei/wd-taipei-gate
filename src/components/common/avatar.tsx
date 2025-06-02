@@ -8,8 +8,8 @@ export default function Avatar({ text, className }: { text?: string, className?:
   return (
     <div className={cn("flex justify-center gap-4", className)}>
       <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: 150, scale: 0 }}
+        whileInView={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ type: "spring", duration: 0.3 }}
         className="px-8 h-18 flex items-center justify-center bg-neutral-50 border rounded-full"
       >
