@@ -60,15 +60,7 @@ export default function MainItem({ data }: { data: Gate }) {
         </motion.h2>
       </div>
       {/* 特徴 */}
-      <Avatar text={data.feature} className="justify-start" />
-      {/* <motion.h1
-        className="text-xl md:text-2xl font-[500] tracking-widest"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-      >
-        {data.feature}
-      </motion.h1> */}
+      <Avatar text={data.feature} className="justify-end md:justify-start" />
       {/* 説明 */}
       <div className="flex flex-col gap-4">
         {data.descriptions.map((description, index) => (
