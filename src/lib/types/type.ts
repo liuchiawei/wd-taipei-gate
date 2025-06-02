@@ -5,6 +5,7 @@ export type Gate = {
   hiragana: string;
   history: string;
   image: string;
+  photo: string;
   feature: string;
   descriptions: string[];
 }
