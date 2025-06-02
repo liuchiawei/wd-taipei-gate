@@ -32,7 +32,7 @@ export default function MainItem({ data }: { data: Gate }) {
       className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 w-full h-full p-8 mx-auto scroll-mt-24"
     >
       {/* 画像 */}
-      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="row-span-3">
+      <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="row-span-3 cursor-pointer">
         <div className="flex flex-col items-center justify-center relative w-full h-full p-12 bg-neutral-200 dark:bg-neutral-700 rounded-xl" onClick={handleFlip}>
           <motion.div
             className="flex flex-col items-center justify-center"
