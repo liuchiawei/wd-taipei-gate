@@ -1,15 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto, Noto_Sans_JP, Kiwi_Maru, Dela_Gothic_One } from "next/font/google";
+import { Kiwi_Maru, Dela_Gothic_One } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/common/themeProvider";
 import AppSidebar from "@/components/common/appSidebar";
-
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-});
 
 const kiwiMaru = Kiwi_Maru({
   variable: "--font-kiwi-maru",
@@ -41,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" >
-      <body className={`${roboto.variable} ${kiwiMaru.variable} ${delaGothicOne.variable} antialiased`}>
+      <body className={`${kiwiMaru.variable} ${delaGothicOne.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -49,7 +44,7 @@ export default function RootLayout({
         >
           <SidebarProvider>
             <AppSidebar />
-            <main>
+            <main className="w-full max-w-6xl mx-auto">
               {children}
             </main>
           </SidebarProvider>
