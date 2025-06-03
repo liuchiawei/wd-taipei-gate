@@ -5,7 +5,7 @@ import data from '@/data/content.json'
 
 export default function Intro() {
   return (
-    <div id="intro" className="flex flex-col md:flex-row md:flex-row-reverse items-center justify-center gap-2 w-full max-w-xl h-full max-h-screen mx-auto px-6 py-0 md:py-18">
+    <div id="intro" className="flex flex-col md:flex-row md:flex-row-reverse items-center justify-center gap-2 w-full max-w-xl h-full max-h-screen mx-auto px-6 py-0 md:py-24">
       {data.intro.description.map((intro, index) => (
         <motion.p
           key={index}

@@ -37,7 +37,7 @@ export default function MainItem({ data }: { data: Gate }) {
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="row-span-3 cursor-pointer">
         <Tooltip>
           <TooltipTrigger asChild>
-            <div className="flex flex-col items-center justify-center relative w-full h-full p-12 bg-neutral-200 dark:bg-neutral-700 rounded-xl hover:*:data-gate:animate-soft-bounce" onClick={handleFlip}>
+            <div className="flex flex-col items-center justify-center relative w-full h-full p-12 bg-neutral-200 dark:bg-neutral-700 rounded-xl hover:shadow-xl hover:*:data-gate:animate-soft-bounce" onClick={handleFlip}>
               <motion.div
                 data-gate
                 className="flex flex-col items-center justify-center"
@@ -64,7 +64,7 @@ export default function MainItem({ data }: { data: Gate }) {
             <p>{content.tooltip}</p>
           </TooltipContent>
         </Tooltip>
-        <div className="flex flex-col items-center justify-center w-full h-full rounded-xl overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${data.photo})` }} onClick={handleFlip} />
+        <div className="flex flex-col items-center justify-center w-full h-full rounded-xl overflow-hidden bg-cover bg-center hover:shadow-xl" style={{ backgroundImage: `url(${data.photo})` }} onClick={handleFlip} />
 
       </ReactCardFlip>
 
