@@ -7,6 +7,8 @@ import ReactCardFlip from "react-card-flip"
 import { Gate } from "@/lib/types/type"
 import Avatar from "@/components/common/avatar"
 import SplitText from "@/components/common/splitText"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import content from "@/data/content.json"
 
 export default function MainItem({ data }: { data: Gate }) {
 
@@ -27,33 +29,41 @@ export default function MainItem({ data }: { data: Gate }) {
   };
 
   return (
-    <div 
+    <section 
       id={data.id} 
       className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 w-full h-full p-8 mx-auto scroll-mt-24"
     >
       {/* 画像 */}
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal" containerClassName="row-span-3 cursor-pointer">
-        <div className="flex flex-col items-center justify-center relative w-full h-full p-12 bg-neutral-200 dark:bg-neutral-700 rounded-xl" onClick={handleFlip}>
-          <motion.div
-            className="flex flex-col items-center justify-center"
-            initial={{ opacity: 0, y: 120, scale: 0.9 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ type: "spring", bounce: 0.6, stiffness: 200, duration: 0.2, delay: 0.2 }}
-          >
-            <Image src={data.image} alt={data.name} width={300} height={300} />
-          </motion.div>
-          <motion.div
-            className="border-b border-2 border-stone-700 dark:border-neutral-900 z-10 origin-bottom-left"
-            initial={{ width: "0%" }}
-            whileInView={{ width: "100%" }}
-            transition={{ type: "spring", duration: 0.3 }}
-          />
-          {/* 画像タイトル */}
-          <SplitText
-            text={data.name}
-            className="text-5xl font-title my-4 tracking-widest"
-          />
-        </div>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="flex flex-col items-center justify-center relative w-full h-full p-12 bg-neutral-200 dark:bg-neutral-700 rounded-xl hover:*:data-gate:animate-soft-bounce" onClick={handleFlip}>
+              <motion.div
+                data-gate
+                className="flex flex-col items-center justify-center"
+                initial={{ opacity: 0, y: 120, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ type: "spring", bounce: 0.6, stiffness: 200, duration: 0.2, delay: 0.2 }}
+              >
+                <Image src={data.image} alt={data.name} width={300} height={300} />
+              </motion.div>
+              <motion.div
+                className="border-b border-2 border-stone-700 dark:border-neutral-900 z-10 origin-bottom-left"
+                initial={{ width: "0%" }}
+                whileInView={{ width: "100%" }}
+                transition={{ type: "spring", duration: 0.3 }}
+              />
+              {/* 画像タイトル */}
+              <SplitText
+                text={data.name}
+                className="text-5xl font-title my-4 tracking-widest"
+              />
+            </div>              
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{content.tooltip}</p>
+          </TooltipContent>
+        </Tooltip>
         <div className="flex flex-col items-center justify-center w-full h-full rounded-xl overflow-hidden bg-cover bg-center" style={{ backgroundImage: `url(${data.photo})` }} onClick={handleFlip} />
 
       </ReactCardFlip>
@@ -88,6 +98,6 @@ export default function MainItem({ data }: { data: Gate }) {
           >{description}</motion.p>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
