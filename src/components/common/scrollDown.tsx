@@ -25,7 +25,7 @@ export default function ScrollDown() {
     }
   };
   return (
-    <Button onClick={scrollDown} variant="default" size="lg" className={`absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer`}>
+    <Button onClick={scrollDown} variant="default" size="lg" className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer hover:shadow-lg hover:shadow-neutral-900 hover:-translate-y-2">
       <ArrowDown className="size-4" />
     </Button>
   );

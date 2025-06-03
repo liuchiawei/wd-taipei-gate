@@ -11,21 +11,21 @@ export default function Avatar({ text, className }: { text?: string, className?:
         initial={{ opacity: 0, x: 150, scale: 0 }}
         whileInView={{ opacity: 1, x: 0, scale: 1 }}
         transition={{ type: "spring", duration: 0.3 }}
-        className="px-8 h-18 flex items-center justify-center bg-neutral-50 border rounded-full"
+        className="w-full h-18 px-8 flex items-center justify-center bg-neutral-50 border rounded-full origin-right"
       >
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.1, delay: 0.2 }}
-          className="text-lg text-center font-maru font-[500] text-neutral-950">{text}</motion.h2>
+          className="text-lg text-justify leading-none font-maru font-[500] text-neutral-950">{text}</motion.h2>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", duration: 0.3 }}
-        className="size-18 border rounded-full overflow-hidden"
+        className="flex-none size-18 border rounded-full flex justify-center items-center overflow-hidden"
       >
-        <Image src="images/avatar.svg" alt="avatar" width={100} height={100} />
+        <Image src="images/avatar.svg" alt="avatar" width={160} height={160} />
       </motion.div>
     </div>
   );
