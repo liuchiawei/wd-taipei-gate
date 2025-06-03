@@ -29,7 +29,7 @@ export default function MainItem({ data }: { data: Gate }) {
   };
 
   return (
-    <div 
+    <section 
       id={data.id} 
       className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 w-full h-full p-8 mx-auto scroll-mt-24"
     >
@@ -98,6 +98,6 @@ export default function MainItem({ data }: { data: Gate }) {
           >{description}</motion.p>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

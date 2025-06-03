@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/common/themeProvider";
 import AppSidebar from "@/components/common/appSidebar";
+import Footer from "@/components/layout/footer";
 
 const kiwiMaru = Kiwi_Maru({
   variable: "--font-kiwi-maru",
@@ -44,9 +45,10 @@ export default function RootLayout({
         >
           <SidebarProvider>
             <AppSidebar />
-            <main className="w-full max-w-6xl mx-auto">
+            <div className="w-full mx-auto">
               {children}
-            </main>
+              <Footer />
+            </div>
           </SidebarProvider>
         </ThemeProvider>
         <Analytics />
