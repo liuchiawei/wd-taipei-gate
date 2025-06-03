@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "台北城門物語  | 歴史と現代が交差する場所",
     description: "台北城の五つの城門（承恩門、景福門、麗正門、重熙門、寶成門）を詳しく紹介し、その歴史、建築様式、美しさを網羅的に紹介する完全ガイドです。",
-    images: "/images/tpe_skyline.svg",
+    images: "/images/tpe_skyline.png",
   },
 };
 
